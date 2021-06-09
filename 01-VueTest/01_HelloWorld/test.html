@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>01_HelloWorld</title>
+  </head>
+  <body>
+    <!--
+      1. 引入Vue.js
+      2. 创建Vue对象
+        el : 指定根element(选择器)
+        data : 初始化数据(页面可以访问)
+      3. 双向数据绑定 : v-model
+      4. 显示数据 : {{xxx}}
+      5. 理解vue的mvvm实现
+    -->
+    <!-- 模板页面 -->
+    <div id="root">
+      <!-- 插值语法或者 双大括号表达式 -->
+      <h1>{{msg}}</h1>
+      <input type="text" v-model="msg" />
+      <input type="text" value="hello vue" />
+      <!-- <h1>{{count>10?"aaa":"bbb"}}</h1> -->
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+     const vm= new Vue({
+        el: "#root",
+        data: {
+          msg: "hello Vue",
+        },
+      });
+      console.log(vm);
+    </script>
+  </body>
+</html>
