@@ -28,8 +28,9 @@
 
     <div id="app">
       <h2>1. class绑定: :class='xxx'</h2>
-      <p class = "isRed ? 'red' : 'green'">这是一段文字~</p>
       <p>这是一段文字~</p>
+      <p :class = "isRed ? 'red' : 'green'">这是一段文字~</p>
+     
       <p>这是一段文字~</p>
       <p>这是一段文字~</p>
       <button @click = "changeColor">改变颜色</button>
