@@ -1,29 +1,31 @@
 <template>
-  <form class="form-horizontal" @submit.prevent="submit">
-    <div class="form-group">
-      <label>用户名</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="用户名"
-        v-model="name"
-      />
-    </div>
-    <div class="form-group">
-      <label>评论内容</label>
-      <textarea
-        class="form-control"
-        rows="6"
-        placeholder="评论内容"
-        v-model="content"
-      ></textarea>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default pull-right">提交</button>
+  <div class="col-md-4">
+    <form class="form-horizontal" @submit.prevent="submit">
+      <div class="form-group">
+        <label>用户名</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="用户名"
+          v-model="name"
+        />
       </div>
-    </div>
-  </form>
+      <div class="form-group">
+        <label>评论内容</label>
+        <textarea
+          class="form-control"
+          rows="6"
+          placeholder="评论内容"
+          v-model="content"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default pull-right">提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -39,12 +41,11 @@ export default {
     submit() {
       const { name, content } = this;
       if (!name || !content) {
-        alert("请输入姓名或评论内容");
+        alert("请输入用户名或评论内容!!!");
         return;
       }
-      //添加评论 触发事件
-
-      this.$bus.$emit("addComment", name, content);
+      //添加评论 触发事件(发送数据)
+      this.$bus.$emit("addComment", name,content);
       this.name = "";
       this.content = "";
     },

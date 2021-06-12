@@ -10,15 +10,15 @@
       </div>
     </header>
     <div class="container">
-      <div class="col-md-4"><CommentAdd /></div>
-      <div class="col-md-8"><CommentList /></div>
+      <CommentAdd />
+      <CommentList />
     </div>
   </div>
 </template>
 
 <script>
 import CommentAdd from "./views/CommentAdd";
-import CommentList from "./views/CommentList";
+import CommentList from "./views/CommentList"
 export default {
   name: "App",
   components: {

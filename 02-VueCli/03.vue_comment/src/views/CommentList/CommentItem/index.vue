@@ -1,14 +1,16 @@
 <template>
-  <li class="list-group-item">
-    <div class="handle">
-      <a href="javascript:;" @click="del">删除</a>
-    </div>
-    <p class="user">
-      <span>{{ comment.name }}</span
-      ><span>说:</span>
-    </p>
-    <p class="centence">{{ comment.content }}</p>
-  </li>
+  <div>
+    <li class="list-group-item">
+      <div class="handle">
+        <a href="javascript:;" @click="del">删除</a>
+      </div>
+      <p class="user">
+        <span>{{ comment.name }}</span
+        ><span>说:</span>
+      </p>
+      <p class="centence">{{ comment.content }}</p>
+    </li>
+  </div>
 </template>
 
 <script>
@@ -17,13 +19,14 @@ export default {
   props: {
     comment: Object,
   },
-  methods:{
-    del(){
-      if(window.confirm(`您是否要删除${this.comment.name}的评论`)){
-        this.$bus.$emit("delComment",this.comment.id)
+
+  methods: {
+    del() {
+      if (window.confirm(`您是否要删除${this.comment.name}的评论`)) {
+        this.$bus.$emit("delComment", this.comment.id);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
