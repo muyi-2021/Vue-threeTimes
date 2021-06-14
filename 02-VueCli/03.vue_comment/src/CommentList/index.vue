@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-8">
     <h3 class="reply">评论回复：</h3>
-    <h2 style="display: none" v-show="!comments.length">暂无评论，点击左侧添加评论！！！</h2>
+    <h2 style="display: none">暂无评论，点击左侧添加评论！！！</h2>
     <ul class="list-group">
       <CommentItem
         v-for="comment in comments"
@@ -19,8 +19,9 @@ export default {
   data() {
     return {
       comments: [
-        { id: 1, name: "闫海静", content: "华华我爱你!!" },
-        { id: 2, name: "李沛华", content: "雷哥我爱你!!!" },
+        { id: 1, name: "闫海静", content: "华华我爱你!" },
+        { id: 2, name: "李沛华", content: "雷雷我爱你!" },
+        { id: 3, name: "罗电雷", content: "健健我爱你!" },
       ],
     };
   },
@@ -28,7 +29,7 @@ export default {
     CommentItem,
   },
   mounted() {
-    //绑定事件 接收数据(被修改)
+    // 绑定事件
     this.$bus.$on("addComment", this.addComment);
     this.$bus.$on("delComment", this.delComment);
   },
@@ -38,7 +39,11 @@ export default {
   },
   methods: {
     addComment(name, content) {
-      this.comments.unshift({ id: Date.now(), name, content });
+      this.comments.unshift({
+        id: Date.now(),
+        name,
+        content,
+      });
     },
     delComment(id) {
       this.comments = this.comments.filter((comment) => {

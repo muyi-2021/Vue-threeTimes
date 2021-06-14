@@ -41,11 +41,11 @@ export default {
     submit() {
       const { name, content } = this;
       if (!name || !content) {
-        alert("请输入用户名或评论内容!!!");
+        alert("请输入姓名或者评论内容");
         return;
       }
-      //添加评论 触发事件(发送数据)
-      this.$bus.$emit("addComment", name,content);
+      //添加评论 触发事件 发送数据
+      this.$bus.$emit("addComment", name, content);
       this.name = "";
       this.content = "";
     },

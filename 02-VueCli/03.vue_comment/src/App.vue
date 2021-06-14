@@ -11,14 +11,14 @@
     </header>
     <div class="container">
       <CommentAdd />
-      <CommentList />
+      <CommentList/>
     </div>
   </div>
 </template>
 
 <script>
-import CommentAdd from "./views/CommentAdd";
-import CommentList from "./views/CommentList"
+import CommentAdd from "./CommentAdd";
+import CommentList from "./CommentList";
 export default {
   name: "App",
   components: {
